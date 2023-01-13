@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import { Box } from "@mui/material";
-import { Main, PrivacyPolicy, Terms, FAQ, Sale } from "./pages";
+import { Main, PrivacyPolicy, Terms, FAQ } from "./pages";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -22,12 +22,12 @@ function App() {
     <Box>
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/sale" replace />} />
-          <Route path="/main" element={<Main />} />
+          <Route exact path="/" element={<Main />} />
+          <Route path="/main" element={<Navigate to="/" replace />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-conditions" element={<Terms />} />
           <Route path="faq" element={<FAQ />} />
-          <Route path="sale" element={<Sale />} />
+          <Route path="sale" element={<Navigate to="/" replace />} />
         </Routes>
       </ThemeProvider>
     </Box>

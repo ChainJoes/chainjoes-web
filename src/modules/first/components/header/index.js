@@ -252,43 +252,6 @@ const Header = ({ closeMenu, buttons }) => {
           </Box>
         </Box>
         <Box sx={{ display: "flex" }}>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Link href="/sale" underline="none">
-              <Box
-                sx={{
-                  width: "150px",
-                  height: "44px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "2px",
-                  border: "1px solid",
-                  borderImageSlice: 1,
-                  borderImageSource:
-                    "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-                  marginRight: "16px",
-                  cursor: `pointer`,
-                  color: "#05D19B",
-                  ":hover": {
-                    color: "#FFF",
-                  },
-                  ":focus": {
-                    border: "1px solid #FFF",
-                    color: "#FFF",
-                  },
-                  ":active": {
-                    background: "#FFF",
-                    color: "#080808",
-                  },
-                }}
-              >
-                <Typography fontSize="14px" fontFamily="Inter" fontWeight={500}>
-                  Sale
-                </Typography>
-              </Box>
-            </Link>
-          </Box>
           <Box
             sx={{
               display: { xs: "flex", xl: "none" },

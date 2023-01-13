@@ -30,11 +30,6 @@ const First = () => {
     }
   });
 
-  const handleClose = (e) => {
-    e.preventDefault();
-    setIsBanner(false);
-  };
-
   const handleMobileMenu = (e) => {
     e?.preventDefault();
     const html = document.documentElement;
@@ -140,99 +135,6 @@ const First = () => {
 
   return (
     <Box sx={{ position: "relative" }}>
-      <Box
-        sx={{
-          paddingY: { xs: "16px", md: "12px" },
-          background: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(10px)",
-          position: "absolute",
-          width: "100%",
-          top: isBanner ? 0 : { xs: "-120px", md: "-80px" },
-          zIndex: 2,
-          transition: "top 0.2s ease-in-out",
-        }}
-      >
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            fontSize: { xs: "12px" },
-            lineHeight: { xs: "12px" },
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            justifyContent: "center",
-            alignItems: "center",
-            maxWidth: { xs: "175px", md: "100%" },
-            margin: { xs: "auto", md: 0 },
-            textAlign: "center",
-          }}
-        >
-          <Typography
-            color="#FFF"
-            fontFamily="Inter"
-            style={{ fontSize: "inherit", lineHeight: "inherit" }}
-          >
-            Private sale is live.
-          </Typography>
-          <Link href="/sale" underline="none">
-            <Box
-              sx={{
-                padding: { xs: "10px 16px" },
-                marginLeft: { md: "12px" },
-                marginTop: { xs: "12px", md: 0 },
-                borderRadius: "2px",
-                color: "#FFF",
-                cursor: "pointer",
-                background:
-                  "linear-gradient(204.42deg, #00FFB7 -11.28%, #005B42 105.96%)",
-                ":hover": {
-                  outline: "1px solid #00FFB7",
-                  background: "none",
-                },
-                ":focus": {
-                  outline: "1px solid #FFF",
-                  background: "none",
-                },
-                ":active": {
-                  background: "#FFF",
-                  color: "#080808",
-                },
-              }}
-            >
-              <Typography
-                fontFamily="Inter"
-                style={{
-                  fontSize: "inherit",
-                  lineHeight: "inherit",
-                  color: "inherit",
-                }}
-              >
-                Join Sale
-              </Typography>
-            </Box>
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            top: { xs: "13px", md: "50%" },
-            transform: { md: "translateY(-50%)" },
-            right: { xs: "8px", md: "70px", lg: "135px" },
-            cursor: "pointer",
-          }}
-          onClick={(e) => handleClose(e)}
-          onMouseEnter={(e) => {
-            e.preventDefault();
-            setCrossColor("#FFF");
-          }}
-          onMouseLeave={(e) => {
-            e.preventDefault();
-            setCrossColor("");
-          }}
-        >
-          <CloseBtn color={crossColor} />
-        </Box>
-      </Box>
       <Box
         sx={{
           position: "absolute",
@@ -460,7 +362,6 @@ const First = () => {
         </Box>
         <Box
           sx={{
-            paddingTop: isBanner ? { xs: "80px", md: "60px" } : "0",
             transition: "all 0.2s ease-in-out",
           }}
         >
